@@ -152,22 +152,29 @@
         // window.open();
         return featureList;
     }
+    var eCtrl = ['altKey', 'ctrlKey', 'shiftKey', 'metaKey'];
     document.onkeydown = function(e) {
         var key = document.all ? e.keyCode : e.which;
         featureList.forEach(function(item) {
             if(e.altKey || e.ctrlKey || e.shiftKey || e.metaKey) {
                 if(stringArr(item.code)) {
                     // console.log('one');
-                    var arrObj = divideArr(item.code);
+                    var arrObj = divideArr(item.code);//{[f], [alt, ctrl]}
                     var flag = false;
-                    
+                    var num = 0;
+                    // 只要注册的键中有没被摁下的，flag就会变成true，函数不执行
                     arrObj.strArr.forEach(function(item) {
                         if(!e[item]) {
                             flag = true;
                         }
                     });
+                    eCtrl.forEach(function(item) {
+                        if(e[item]) {
+                            num ++;
+                        }
+                    });
                     // console.log(flag);
-                    if(!flag && arrObj.numberArr[0] === key) {
+                    if(!flag && num === arrObj.strArr.length  && arrObj.numberArr[0] === key) {
                         item.fn();
                     }
                 }

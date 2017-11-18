@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="./index.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    keyuse('c', '测试', function(){
+        console.log('c');
+    })
+    keyuse('a', '测试', function(){
+        console.log('a');
+    })
+    keyuse('b', '测试', function(){
+        console.log('b');
+    })
+    keyuse('d', '测试', function(){
+        console.log('d');
+    })
+    keyuse('ctrl', '测试', function(){
+        console.log('ctrl');
+    })
+    keyuse('b + ctrl', '测试', function(){
+        console.log('b + ctrl');
+    })
+    keyuse('b + ctrl + alt', '测试', function(){
+        console.log('b + ctrl + alt');
+    })
+    keyuse('f + alt + ctrl', '测试', function(){
+        console.log('f + alt + ctrl');
+    })
+    var List = [
+        {keyname: 'h', des: 'tt', fn: function(){
+            console.log('tttttttthht');
+        }},
+        {keyname: 'n', des: 'tt', fn: function(){
+            console.log('ttttttttnnnt');
+        }},
+    ];
+    keyuse.addList(List);
+</script>
+
+
