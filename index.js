@@ -149,9 +149,32 @@
     }
     // 展示快捷键描述
     keyuse.show = function () {
-        // window.open();
-        return featureList;
+        var content = '';
+        featureList.forEach(function(item) {
+            content = content + 
+            '<tr>' +
+                '<td style="color: #666; font-size: 14px; border-bottom: 1px solid #eee;padding: 10px 20px;vertical-align: middle;text-align: left;">'+ 
+                    item.keyname +
+                '</td>' +
+                '<td style="color: #666; font-size: 14px; border-bottom: 1px solid #eee;padding: 10px 20px;vertical-align: middle;text-align: left;">'+ 
+                    item.des +
+                '</td>' +
+            '</tr>';
+        });
+        var newwindow = window.open();
+        newwindow.document.write('<html><title>快捷键设置记录</title>');
+        newwindow.document.write('<body>' + 
+        '<div>' +
+            '<table>' + 
+            '<thead>' +
+                '<th>快捷键键名称</th>' +
+                '<th>快捷键功能描述</th>' +
+            '</thead>' + 
+        '<tbody>');
+        newwindow.document.write(content);
+        newwindow.document.write('</tbody></table></div></body></html>');
     }
+
     var eCtrl = ['altKey', 'ctrlKey', 'shiftKey', 'metaKey'];
     document.onkeydown = function(e) {
         var key = document.all ? e.keyCode : e.which;

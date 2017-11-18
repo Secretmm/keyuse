@@ -12,36 +12,33 @@
 </body>
 </html>
 <script>
-    keyuse('c', '测试', function(){
+    keyuse('c', '测试c', function(){
         console.log('c');
     })
-    keyuse('a', '测试', function(){
+    keyuse('a', '测试a', function(){
         console.log('a');
     })
-    keyuse('b', '测试', function(){
+    keyuse('b', '测试b', function(){
         console.log('b');
     })
-    keyuse('d', '测试', function(){
+    keyuse('d', '测试d', function(){
         console.log('d');
     })
-    keyuse('ctrl', '测试', function(){
-        console.log('ctrl');
-    })
-    keyuse('b + ctrl', '测试', function(){
+    keyuse('b + ctrl', '测试b+ctrl', function(){
         console.log('b + ctrl');
     })
-    keyuse('b + ctrl + alt', '测试', function(){
+    keyuse('b + ctrl + alt', '测试b + ctrl + alt', function(){
         console.log('b + ctrl + alt');
     })
-    keyuse('f + alt + ctrl', '测试', function(){
+    keyuse('f + alt + ctrl', '测试f + alt + ctrl', function(){
         console.log('f + alt + ctrl');
     })
     var List = [
-        {keyname: 'h', des: 'tt', fn: function(){
-            console.log('tttttttthht');
+        {keyname: 'h', des: '测试h', fn: function(){
+            console.log('h');
         }},
-        {keyname: 'n', des: 'tt', fn: function(){
-            console.log('ttttttttnnnt');
+        {keyname: 'n', des: 'n', fn: function(){
+            console.log('n');
         }},
     ];
     keyuse.addList(List);
