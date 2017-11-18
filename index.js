@@ -164,7 +164,7 @@
         var newwindow = window.open();
         newwindow.document.write('<html><title>快捷键设置记录</title>');
         newwindow.document.write('<body>' + 
-        '<div>' +
+        '<div style="display: flex;justify-content: center;width: 100%;">' +
             '<table>' + 
             '<thead>' +
                 '<th>快捷键键名称</th>' +
